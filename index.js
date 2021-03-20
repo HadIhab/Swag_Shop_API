@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/swag-shop');
+var db = mongoose.connect('mongodb://localhost:27017/swag-shop', { useNewUrlParser: true,useUnifiedTopology: true });
 
 
 app.use(bodyParser.json());
