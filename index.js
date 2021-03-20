@@ -2,11 +2,13 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost/swag-shop');
 
-var ingredients = [ {id:0, text:'Pepper'},{id:1, text:'Salt'},{id:2, text:'Sugar'} ];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+
+/*var ingredients = [ {id:0, text:'Pepper'},{id:1, text:'Salt'},{id:2, text:'Sugar'} ];
 
 app.get('/',function(req,res){
 	res.send('This is the base URL of this simple API.');
@@ -33,7 +35,7 @@ app.put('/ingredients/:ingredientId',function(req,res){
 		}
 		res.send(ingredients);
 	}
-});
+});*/
 
 app.listen(3000,function(){
 	console.log('[INFO]: CRUD API is running on server..');
