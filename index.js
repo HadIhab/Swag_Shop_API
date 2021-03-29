@@ -39,4 +39,5 @@ app.put('/ingredients/:ingredientId',function(req,res){
 
 app.listen(3000,function(){
 	console.log('[INFO]: CRUD API is running on server..');
+	
 });
