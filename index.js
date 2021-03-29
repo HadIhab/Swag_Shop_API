@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost:27017/swag-shop', { useNewUrlParser: true,useUnifiedTopology: true });
 
+var Product = require('./model/product');
+var WishList = require('./model/wishlist');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -38,6 +40,5 @@ app.put('/ingredients/:ingredientId',function(req,res){
 });*/
 
 app.listen(3000,function(){
-	console.log('[INFO]: CRUD API is running on server..');
-	
+	console.log('[INFO]: CRUD API is running on server..');	
 });
